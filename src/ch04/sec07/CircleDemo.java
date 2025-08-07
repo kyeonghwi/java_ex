@@ -16,8 +16,8 @@ public class CircleDemo {
 
 class Circle {
 	// 인스턴스 변수
-	double radius;
-	int numCircles;
+	public double radius;
+	public int numCircles;
 
 	// 정적 변수
 	static int numOfCircles = 0;
