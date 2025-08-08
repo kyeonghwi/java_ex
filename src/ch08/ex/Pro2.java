@@ -2,7 +2,7 @@ package ch08.ex;
 
 public class Pro2 {
 	public static void main(String[] args) {
-		System.out.println(new Student("kim sagat"));
+		System.out.println(new Student("kim sat-gat"));
 		System.out.println(new Student("hong gildong"));
 	}
 }
