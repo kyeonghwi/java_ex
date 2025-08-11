@@ -8,44 +8,27 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		for (int i = 0; i < T; i++) {
-			int x1 = sc.nextInt();
-			int y1 = sc.nextInt();
-			int x2 = sc.nextInt();
-			int y2 = sc.nextInt();
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			ArrayList<Integer> pattern = new ArrayList<>();
+			int rest = a % 10;
+			pattern.add(rest);
 
-			int n = sc.nextInt();
-			ArrayList<Circle> list = new ArrayList();
-			for (int j = 0; j < n; j++) {
-				int cx = sc.nextInt();
-				int cy = sc.nextInt();
-				int r = sc.nextInt();
-				list.add(new Circle(cx, cy, r));
-			}
-
-			int cnt = 0;
-			for (Circle circle : list) {
-				double dis1 = Math.sqrt(Math.pow(circle.cx - x1, 2) + Math.pow(circle.cy - y1, 2));
-				double dis2 = Math.sqrt(Math.pow(circle.cx - x2, 2) + Math.pow(circle.cy - y2, 2));
-				boolean in1 = dis1 < circle.r;
-				boolean in2 = dis2 < circle.r;
-				if (in1 != in2) {
-					cnt++;
+			while (true) {
+				rest = (rest * a) % 10;
+				if (pattern.contains(rest)) {
+					break;
 				}
+				pattern.add(rest);
 			}
 
-			System.out.println(cnt);
+			int idx = b % pattern.size();
+			int answer = (idx == 0) ? pattern.get(pattern.size() - 1) : pattern.get(idx - 1);
 
+			if (answer == 0) {
+				answer = 10;
+			}
+			System.out.println(answer);
 		}
-
-	}
-}
-
-class Circle {
-	int cx, cy, r;
-
-	Circle(int cx, int cy, int r) {
-		this.cx = cx;
-		this.cy = cy;
-		this.r = r;
 	}
 }

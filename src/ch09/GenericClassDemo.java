@@ -37,20 +37,38 @@ class Cup {
 	public void setBeverage(Object beverage) {
 		this.beverage = beverage;
 	}
+
+	@Override
+	public String toString() {
+		return "cup";
+	}
 }
 
 class Beverage {
-
+	@Override
+	public String toString() {
+		return "beverage";
+	}
 }
 
 class Beer extends Beverage {
 	void drink() {
 		System.out.println("drink beer");
 	}
+
+	@Override
+	public String toString() {
+		return "beer";
+	}
 }
 
 class BarleyTea extends Beverage {
 	void eat() {
 		System.out.println();
+	}
+
+	@Override
+	public String toString() {
+		return "boricha";
 	}
 }
