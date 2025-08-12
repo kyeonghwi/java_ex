@@ -22,8 +22,11 @@ public class CollectionFrameworkDemo {
 		iArr.add(53);
 		iArr.add(-34);
 		iArr.add(15);
+		iArr.forEach(i -> System.out.print(i + ", "));
+		System.out.println();
 		iArr.removeIf(i -> i < 0);
-		iArr.forEach(i -> System.out.println(i));
+		iArr.forEach(i -> System.out.print(i + ", "));
+		System.out.println();
 
 		ArrayList<Triangle> tArr = new ArrayList<Triangle>();
 		tArr.add(new Triangle(3, 10));
