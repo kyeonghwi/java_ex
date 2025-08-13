@@ -1,5 +1,7 @@
 package ch10.ex;
 
+import java.util.ArrayList;
+
 public class Account {
 	private String accountNO;
 	private String accountOwner;
@@ -51,6 +53,15 @@ public class Account {
 	@Override
 	public String toString() {
 		return String.format("%s \t %d \t %s", accountNO, balance, accountOwner);
+	}
+
+	public Account findAccount(String accountNum, ArrayList<Account> accounts) {
+		for (Account acc : accounts) {
+			if (acc.getAccountNO().equals(accountNum)) {
+				return acc;
+			}
+		}
+		return null;
 	}
 
 }
