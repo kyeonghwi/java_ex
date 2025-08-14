@@ -1,12 +1,12 @@
 package ch10.ex;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
-public class BankApplication {
+public class BankApplication_1 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		ArrayList<Account> accounts = new ArrayList<Account>();
+		LinkedList<Account> accounts = new LinkedList();
 
 		while (true) {
 			System.out.println("----------------------------------------");
@@ -32,7 +32,7 @@ public class BankApplication {
 		sc.close();
 	}
 
-	private static void createAccount(Scanner sc, ArrayList<Account> accounts) {
+	private static void createAccount(Scanner sc, LinkedList<Account> accounts) {
 		System.out.println("--------");
 		System.out.println("계좌생성>");
 		System.out.println("--------");
@@ -64,7 +64,7 @@ public class BankApplication {
 
 	}
 
-	private static void showAccount(Scanner sc, ArrayList<Account> accounts) {
+	private static void showAccount(Scanner sc, LinkedList<Account> accounts) {
 		System.out.println("--------");
 		System.out.println("계좌목록>");
 		System.out.println("--------");
@@ -74,7 +74,7 @@ public class BankApplication {
 
 	}
 
-	private static void depositMoney(Scanner sc, ArrayList<Account> accounts) {
+	private static void depositMoney(Scanner sc, LinkedList<Account> accounts) {
 		System.out.println("--------");
 		System.out.println("예금>");
 		System.out.println("--------");
@@ -100,7 +100,7 @@ public class BankApplication {
 		}
 	}
 
-	private static void withdrawMoney(Scanner sc, ArrayList<Account> accounts) {
+	private static void withdrawMoney(Scanner sc, LinkedList<Account> accounts) {
 		System.out.println("--------");
 		System.out.println("출금>");
 		System.out.println("--------");
