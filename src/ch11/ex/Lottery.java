@@ -33,7 +33,7 @@ public class Lottery {
 				correct++;
 			}
 		}
-		System.out.println("맞은거: " + correct);
+		System.out.println("맞은거: " + correct + "개");
 		sc.close();
 	}
 }
