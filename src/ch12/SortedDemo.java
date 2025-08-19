@@ -20,9 +20,12 @@ public class SortedDemo {
 				.map(s -> s.getName() + " : " + s.getGdpRank()).forEach(Util::printWithParenthesis);
 		System.out.println();
 
-		Nation.nations.stream().sorted(Comparator.comparing(s -> ((Nation) s).getPopulation()).reversed())
+		Nation.nations.stream().sorted(Comparator.comparing(Nation::getPopulation).reversed())
 				.map(s -> s.getName() + " : " + s.getPopulation()).forEach(Util::printWithParenthesis);
 		System.out.println();
+
+		Nation.nations.stream().sorted(Comparator.comparing(Nation::getName).reversed()).map(s -> s.getName())
+				.forEach(Util::printWithParenthesis);
 
 	}
 }
