@@ -16,7 +16,7 @@ public class EchoClient1 {
 		try {
 			client = new Socket();
 			System.out.println("connecting to server....");
-			client.connect(new InetSocketAddress("172.30.1.42", 5500), 3000);
+			client.connect(new InetSocketAddress("172.30.1.23", 6500), 3000);
 			System.out.println("server connected");
 		} catch (Exception e) {
 			System.out.println("error");

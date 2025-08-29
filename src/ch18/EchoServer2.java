@@ -33,12 +33,13 @@ public class EchoServer2 extends Thread {
 
 		System.out.println("new thread generated");
 		try {
+			String clientIpAddress = connection.getInetAddress().getHostAddress();
 			br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
 			String msg = "";
 
 			while ((msg = br.readLine()) != null) {
-				System.out.println("message : " + msg);
+				System.out.println(clientIpAddress + "'s message : " + msg);
 			}
 
 			br.close();
