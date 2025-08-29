@@ -26,5 +26,26 @@ public class SLinkedListDemo {
 		System.out.println(list);
 		System.out.println(list.removeLast());
 
+		list.add(0, 1);
+		list.add(2, 2);
+		list.add(5, 3);
+		System.out.println(list);
+
+		System.out.println(list.remove(1));
+		System.out.println(list);
+
+		System.out.println(list.remove(2));
+		System.out.println(list);
+
+		System.out.println(list.remove(3));
+		System.out.println(list);
+		System.out.println(list.remove(0));
+		System.out.println(list);
+		System.out.println(list.remove(0));
+		System.out.println(list);
+
+		System.out.println(list.remove(0));
+		System.out.println(list);
+
 	}
 }

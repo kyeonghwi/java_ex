@@ -141,6 +141,36 @@ public class SLinkedList<E> {
 		return removedNode.item;
 	}
 
+	E remove(int index) {
+		if (isEmpty()) {
+			throw new IndexOutOfBoundsException();
+		}
+		Node<E> removedNode = null;
+
+		if (index == size) {
+			size--;
+			return removeLast();
+		} else if (index == 0) {
+			size--;
+			return removeFirst();
+		} else if (size > 1) {
+			Node<E> temp = head;
+			Node<E> pre = null;
+
+			for (int i = 0; i < index; i++) {
+				pre = temp;
+				temp = temp.next;
+			}
+			removedNode = temp;
+
+			pre.next = temp.next;
+		} else if (size == 1) {
+			head = tail = null;
+		}
+		size--;
+		return removedNode.item;
+	}
+
 	Node<E> getNode(int index) {
 		Node<E> find = head;
 		// System.out.println(find.item);
@@ -152,6 +182,20 @@ public class SLinkedList<E> {
 	}
 
 	// size , isEmpty 등 편의 메서드를 구현
+
+	int indexOf(E item) {
+		Node<E> temp = head;
+		int findIndex = -1;
+		for (int i = 0; i < size - 1; i++) {
+			if (temp.item == item) {
+				findIndex = i;
+				break;
+			}
+			temp = temp.next;
+		}
+		return findIndex;
+
+	}
 
 	public int size() {
 		return size;
